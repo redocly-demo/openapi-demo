@@ -1,5 +1,5 @@
 parameters:
-  - name: pretty_print
+  - name: prettyPrint
     in: query
     description: Pretty print response
     schema:
@@ -19,7 +19,7 @@ get:
       required: true
       schema:
         type: string
-    - name: with_email
+    - name: withEmail
       in: query
       description: Filter users without email
       schema:
