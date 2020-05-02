@@ -1,7 +1,7 @@
 parameters:
   - name: prettyPrint
     in: query
-    description: Pretty print response
+    description: Pretty print the response
     schema:
       type: boolean
 get:
