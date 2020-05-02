@@ -1,6 +1,7 @@
 # See https://docs.redoc.ly/cli/configuration/ for more information.
 apiDefinitions:
-  main: "openapi/openapi.yaml"
+  v1: "openapi/v1.yaml"
+  v2: "openapi/v2.yaml"
 lint:
   rules:
     no-unused-schemas: warning
