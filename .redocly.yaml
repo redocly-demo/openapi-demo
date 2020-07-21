@@ -6,6 +6,8 @@ lint:
     no-unused-schemas: warning
 referenceDocs:
   htmlTemplate: ./docs/index.html
+  expandDefaultServerVariables: true
+  showConsole: true
   theme:
     colors:
       primary:
