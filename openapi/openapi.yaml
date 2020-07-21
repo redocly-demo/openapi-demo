@@ -58,8 +58,13 @@ tags:
   - name: User
     description: Operations about user
 servers:
-  - url: 'http://example.com/api/v1'
-  - url: 'https://example.com/api/v1'
+  - url: 'https://{environment}.example.com/api/v1'
+    variables:
+      environment:
+        default: prod
+        enum:
+          - prod
+          - stage
 paths:
   '/users/{username}':
     $ref: 'paths/users@{username}.yaml'
