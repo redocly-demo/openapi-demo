@@ -3,20 +3,13 @@ post:
   # x-internal on the operation level
   x-internal: true
   tags:
-    - User
-  summary: Delete user
+    - Admin
+  summary: Create an admin
   description: This can only be done by an internal admin.
   operationId: createAdmin
-  parameters:
-    - name: username
-      in: path
-      description: The username that needs to be deleted
-      required: true
-      schema:
-        type: string
   security:
     - main_auth:
-        - 'delete:users'
+        - 'create:admin'
   responses:
     '204':
       description: OK
@@ -27,14 +20,20 @@ post:
 get:
   # x-internal on the operation level
   x-internal: true
-  operationId: getAdminCollection
+  tags:
+    - Admin
+  summary: List the admins
+  operationId: listAdmins
+  security:
+    - main_auth:
+        - 'read:admin'
   responses:
     '200':
       description: Success
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/User.yaml
+            type: object
           example:
             username: user1
             email: user@example.com

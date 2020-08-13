@@ -65,10 +65,6 @@ paths:
     $ref: 'paths/users@{username}.yaml'
   /echo:
     $ref: paths/echo.yaml
-  /wipe:
-    $ref: paths/wipe.yaml
-  /admins:
-    $ref: paths/admins.yaml
 components:
   securitySchemes:
     main_auth:
