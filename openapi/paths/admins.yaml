@@ -1,0 +1,40 @@
+# Marking every operation as internal. Not marking path item though as internal.
+post:
+  # x-internal on the operation level
+  x-internal: true
+  tags:
+    - User
+  summary: Delete user
+  description: This can only be done by an internal admin.
+  operationId: createAdmin
+  parameters:
+    - name: username
+      in: path
+      description: The username that needs to be deleted
+      required: true
+      schema:
+        type: string
+  security:
+    - main_auth:
+        - 'delete:users'
+  responses:
+    '204':
+      description: OK
+    '400':
+      description: Invalid user supplied
+    '404':
+      description: User not found
+get:
+  # x-internal on the operation level
+  x-internal: true
+  operationId: getAdminCollection
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/User.yaml
+          example:
+            username: user1
+            email: user@example.com

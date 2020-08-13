@@ -75,3 +75,28 @@ put:
           $ref: ../components/schemas/User.yaml
     description: Updated user object
     required: true
+delete:
+  # x-internal on the operation level (others in path item are not internal)
+  x-internal: true
+  tags:
+    - User
+  summary: Delete user
+  description: This can only be done by an internal admin.
+  operationId: deleteUser
+  parameters:
+    - name: username
+      in: path
+      description: The username that needs to be deleted
+      required: true
+      schema:
+        type: string
+  security:
+    - main_auth:
+        - 'delete:users'
+  responses:
+    '204':
+      description: OK
+    '400':
+      description: Invalid user supplied
+    '404':
+      description: User not found

@@ -1,0 +1,22 @@
+# x-internal at the path item level
+x-internal: true
+post:
+  tags:
+    - Wipe
+  summary: Wipe
+  description: Wipes all data from the database
+  operationId: wipe
+  security:
+    - api_key: []
+    - basic_auth: []
+  responses:
+    '204':
+      description: OK
+      headers:
+        X-Rate-Limit:
+          description: calls per hour allowed by the user
+          schema:
+            type: integer
+            format: int32
+        X-Expires-After:
+          $ref: ../components/headers/ExpiresAfter.yaml
