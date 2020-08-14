@@ -1,9 +1,15 @@
 # See https://docs.redoc.ly/cli/configuration/ for more information.
 apiDefinitions:
-  main: "openapi/openapi.yaml"
+  main: openapi/openapi.yaml
+  public: openapi/public.yaml
 lint:
-  rules:
-    no-unused-schemas: warning
+  extends:
+    - recommended
+  plugins:
+    - './util/demo-plugin.js'
+  decorators:
+    demo/remove-internal-operations: error
+
 referenceDocs:
   htmlTemplate: ./docs/index.html
   theme:

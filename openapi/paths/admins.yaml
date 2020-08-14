@@ -1,0 +1,39 @@
+# Marking every operation as internal. Not marking path item though as internal.
+post:
+  # x-internal on the operation level
+  x-internal: true
+  tags:
+    - Admin
+  summary: Create an admin
+  description: This can only be done by an internal admin.
+  operationId: createAdmin
+  security:
+    - main_auth:
+        - 'create:admin'
+  responses:
+    '204':
+      description: OK
+    '400':
+      description: Invalid user supplied
+    '404':
+      description: User not found
+get:
+  # x-internal on the operation level
+  x-internal: true
+  tags:
+    - Admin
+  summary: List the admins
+  operationId: listAdmins
+  security:
+    - main_auth:
+        - 'read:admin'
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+          example:
+            username: user1
+            email: user@example.com
