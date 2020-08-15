@@ -17,3 +17,8 @@ properties:
     example: Smith
   email:
     $ref: ./Email.yaml
+  socialSecurityNumber:
+    description: Social security number
+    type: string
+    example: 555-11-1234
+    x-internal: true

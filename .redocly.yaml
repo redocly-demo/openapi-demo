@@ -9,6 +9,7 @@ lint:
     - './plugins/demo-plugin.js'
   decorators:
     demo/remove-internal-operations: error
+    demo/remove-internal-schema-properties: error
 
 referenceDocs:
   htmlTemplate: ./docs/index.html
