@@ -1,12 +1,12 @@
-# See https://docs.redoc.ly/cli/configuration/ for more information.
+# See https://redoc.ly/docs/cli/configuration/ for more information.
 apiDefinitions:
-  main: openapi/openapi.yaml
-  public: openapi/public.yaml
+  internal: openapi/internal.yaml
+  main: openapi/external.yaml
 lint:
   extends:
     - recommended
   plugins:
-    - './util/demo-plugin.js'
+    - './plugins/demo-plugin.js'
   decorators:
     demo/remove-internal-operations: error
 
