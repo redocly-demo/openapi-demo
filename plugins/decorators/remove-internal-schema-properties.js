@@ -4,10 +4,10 @@ module.exports = RemoveInternalSchemaProperties;
 function RemoveInternalSchemaProperties() {
   return {
     SchemaProperties: {
-      leave(schemaProperties) {
-        for (const schemaPropertyName of Object.keys(schemaProperties)) {
-          if (schemaProperties[schemaPropertyName]['x-internal']) {
-            delete schemaProperties[schemaPropertyName];
+      leave(properties) {
+        for (const propertyName of Object.keys(properties)) {
+          if (properties[propertyName]['x-internal']) {
+            delete properties[propertyName];
           }  
         }  
       }
