@@ -5,6 +5,8 @@ lint:
   rules:
     no-unused-schemas: warning
 referenceDocs:
+  # Notice the next line points to the html template page (that's where the title is and also the link to the favicon). 
+  # You can think of it similarly to the web server's document root for the reference docs.
   htmlTemplate: ./docs/index.html
   theme:
     colors:
