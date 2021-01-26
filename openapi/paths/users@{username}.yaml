@@ -35,9 +35,11 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/User.yaml
-          example:
-            username: user1
-            email: user@example.com
+          examples:
+            John:
+              $ref: ../components/examples/UserJohn.yaml
+            Adam:
+              $ref: ../components/examples/UserAdam.yaml
     '403':
       description: Forbidden
     '404':
@@ -61,6 +63,13 @@ put:
   responses:
     '200':
       description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/User.yaml
+          examples:
+            John:
+              $ref: ../components/examples/UserJohn.yaml
     '400':
       description: Invalid user supplied
     '404':
@@ -70,6 +79,9 @@ put:
       application/json:
         schema:
           $ref: ../components/schemas/User.yaml
+        examples:
+          John:
+            $ref: ../components/examples/UserJohn.yaml
       application/xml:
         schema:
           $ref: ../components/schemas/User.yaml
