@@ -4,6 +4,13 @@ parameters:
     description: Pretty print response
     schema:
       type: boolean
+    examples:
+      true:
+        summary: 'True'
+        value: 1
+      false:
+        summary: 'False'
+        value: 0
 get:
   tags:
     - User
