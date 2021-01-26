@@ -3,7 +3,6 @@ apiDefinitions:
   main: "openapi/openapi.yaml"
 lint:
   rules:
-    no-unused-schemas: warning
 referenceDocs:
   htmlTemplate: ./docs/index.html
   theme:
