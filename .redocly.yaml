@@ -6,7 +6,8 @@ lint:
     no-unused-schemas: warning
 referenceDocs:
   htmlTemplate: ./docs/index.html
+  pagination: section
   theme:
     colors:
       primary:
-        main: "#32329f"
+        main: "red"
